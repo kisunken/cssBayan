@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.header__text {
+  font-family: 'Inter', sans-serif;
+  font-size: 5vw;
+  color: #000000;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.accordion__item {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+}
+
+.accordion__icon {
+  display: inline-block;
+  width: 1rem;
+  height: 2vh;
+  background-image: url(./assets/angle-up-solid.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.4s;
+}
+
+.mem-label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  color: #4766D9;
+  font-weight: 700;
+  font-size: 4vw;
+}
+
+.accordion__button {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.05vw solid #343434;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.accordion__input {
+  width: 100%;
+  height: 100%;
+}
+
+.accordion__img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.8s;
+  margin-bottom: 1vh;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked ~ label .accordion__img {
+  max-height: 30vh;
+  transition: 0.8s;
+  padding-bottom: 1vh;
+}
+
+input[type="radio"]:checked ~ label .accordion__icon {
+  transform: rotate(180deg);
+  transition: 0.8s;
+}
+
+input[type="radio"]:checked ~ label {
+  color: #000000;
+  transition: 0.4s;
+}
+
+.mem__img {
+  display: inline-block;
+  width: 50vw;
+  height: 22vh;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.accordion__img {
+  display: inline-block;
+  height: 30vh;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.accordion-1__img {
+  background-image: url(./assets/mem-1.jpeg);
+}
+.accordion-2__img {
+  background-image: url(./assets/mem-2.jpeg);
+}
+.accordion-3__img {
+  background-image: url(./assets/mem-3.jpeg);
+}
+.accordion-4__img {
+  background-image: url(./assets/mem-4.jpeg);
+}
+.accordion-5__img {
+  background-image: url(./assets/mem-5.jpeg);
+}
+
+/* TABLET MEDIA */
+@media screen and (min-width: 768px) {
+
+  .mem-label {
+    font-size: 3vw;
+  }
+
+  .mem__img {
+    width: 45vw;
+    height: 30vh;
+  }
+}
+
+/* DESKTOP MEDIA */
+
+@media screen and (min-width: 920px) {
+  .header__text {
+    font-size: 4vw;
+  }
+
+  .accordion {
+    width: 50%;
+  }
+
+  .accordion__item {
+    display: inline-block;
+  }
+
+  .accordion__icon {
+    width: 2rem;
+    height: 3vh;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .mem-label {
+    font-size: 2vw;
+  }
+
+  .mem__img {
+    width: 24vw;
+    height: 35vh;
+  }
+}
+
+@media screen and (hover: none) {
+  .accordion__icon {
+    max-height: 2vh;
+  }
+}
+
+@media screen and (hover: hover) {
+
+  .accordion__icon {
+    max-height: 0;
+  }
+
+  .accordion:hover .accordion__text {
+    color: #000000;
+  }
+
+  .mem-label {
+    cursor: pointer;
+  }
+
+  .accordion:hover > .accordion__item > label > .accordion__icon {
+    display: inline-block;
+  }
+
+  .accordion:hover .accordion__icon {
+    transition: 0.8s;
+    max-height: 100vh;
+  }
+
+  input[type="radio"]:hover ~ label .accordion__img {
+    max-height: 30vh;
+    transition: 0.8s;
+    padding-bottom: 1vh;
+  }
+
+  input[type="radio"]:hover ~ label .accordion__item {
+    max-width: 100vh;
+  }
+
+  .accordion__item:hover .accordion__icon {
+    transition: 0.8s;
+    max-height: 100vh;
+    transform: rotate(180deg);
+  }
+
+  input[type="radio"]:active ~ label .accordion__text {
+    color: #4766D9;
+    transition: 0.4s;
+  }
+
+  input[type="radio"]:active ~ label .accordion__icon {
+    transform: rotate(180deg);
+    transition: 0.4s;
+  }
+
+  input[type="radio"]:active ~ label .accordion__img {
+    opacity: 0.8;
+    transition: 0.4s;
+    padding-bottom: 1vh;
+  }
+}
+
+
+/* color: #FB6849; */

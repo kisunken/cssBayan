@@ -27,8 +27,8 @@ align-items: center;
 
 .header__text {
 font-family: 'Inter', sans-serif;
-font-size: 4vh;
-border-bottom: 0.2vh solid #343434;
+font-size: 5vw;
+border-bottom: 0.1vh solid #343434;
 color: #374C70;
 margin-top: 1vh;
 margin-bottom: 1vh;
@@ -60,10 +60,6 @@ background-repeat: no-repeat;
 transition: 0.4s;
 }
 
-.accordion:hover > .accordion__item > label > .accordion__icon {
-display: inline-block;
-}
-
 .mem-label {
 width: 100%;
 display: flex;
@@ -74,7 +70,7 @@ height: 100%;
 font-family: 'Inter', sans-serif;
 color: #374C70;
 font-weight: 700;
-font-size: 2vh;
+font-size: 4vw;
 }
 
 .accordion__button {
@@ -158,12 +154,11 @@ background-image: url(./assets/mem-5.jpeg);
 @media screen and (min-width: 768px) {
 
 .header__text {
-  font-size: 3rem;
   border-bottom: 0.2vh solid #343434;
 }
 
 .mem-label {
-  font-size: 2.5vh;
+  font-size: 3vw;
 }
 
 .mem__img {
@@ -175,74 +170,82 @@ background-image: url(./assets/mem-5.jpeg);
 /* DESKTOP MEDIA */
 
 @media screen and (min-width: 920px) {
-.header__text {
-  font-size: 3rem;
-  border-bottom: 0.2vh solid #343434;
+  .header__text {
+    font-size: 4vw;
+  }
+
+  .accordion {
+    width: 50%;
+  }
+
+  .accordion__item {
+    display: inline-block;
+  }
+
+  .accordion__button {
+    height: 3rem;
+  }
+
+  .accordion__icon {
+    width: 2rem;
+    height: 3vh;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .mem-label {
+    font-size: 2vw;
+  }
+
+  .mem__img {
+    width: 30vw;
+    height: 40vh;
+  }
 }
 
-.accordion {
-  width: 50%;
-}
+@media screen and (hover: hover) {
 
-.accordion__item {
-  display: inline-block;
-  cursor: pointer;
-}
+  .mem-label:hover {
+    cursor: pointer;
+  }
 
-.accordion__button {
-  height: 3rem;
-}
+  .accordion:hover > .accordion__item > label > .accordion__icon {
+    display: inline-block;
+  }
 
-.accordion__icon {
-  width: 2rem;
-  height: 3vh;
-  max-height: 0;
-  overflow: hidden;
-}
+  .accordion:hover .accordion__icon {
+    transition: 0.8s;
+    max-height: 100vh;
+  }
 
-.mem-label {
-  font-size: 5vh;
-  cursor: pointer;
-}
+  input[type="radio"]:hover ~ label .accordion-content {
+    max-height: 100vh;
+    transition: 0.8s;
+  }
 
-.mem__img {
-  width: 30vw;
-  height: 40vh;
-}
+  input[type="radio"]:hover ~ label .accordion__item {
+    max-width: 100vh;
+  }
 
-input[type="radio"]:hover ~ label .accordion-content {
-  max-height: 100vh;
-  transition: 0.8s;
-}
+  .accordion__item:hover .accordion__icon {
+    transition: 0.8s;
+    max-height: 100vh;
+    transform: rotate(180deg);
+  }
 
-input[type="radio"]:hover ~ label .accordion__item {
-  max-width: 100vh;
-}
+  input[type="radio"]:active ~ label {
+    color: #FB6849;
+    transition: 0.4s;
+  }
 
-.accordion:hover .accordion__icon {
-  transition: 0.8s;
-  max-height: 100vh;
-}
+  input[type="radio"]:active ~ label .accordion__icon {
+    background-image: url(./assets/angle-up-solid-active.svg);
+    transform: rotate(180deg);
+    transition: 0.4s;
+  }
 
-.accordion__item:hover  .accordion__icon {
-  transition: 0.8s;
-  max-height: 100vh;
-  transform: rotate(180deg);
-}
-
-input[type="radio"]:active ~ label {
-  color: #FB6849;
-  transition: 0.4s;
-}
-
-input[type="radio"]:active ~ label .accordion__icon {
-  background-image: url(./assets/angle-up-solid-active.svg);
-  transform: rotate(180deg);
-  transition: 0.4s;
-}
-
-input[type="radio"]:active ~ label .accordion-content {
-  opacity: 0.8;
-  transition: 0.4s;
-}
+  input[type="radio"]:active ~ label .accordion-content {
+    opacity: 0.8;
+    transition: 0.4s;
+  }
 }

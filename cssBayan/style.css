@@ -88,22 +88,22 @@ body {
   height: 100%;
 }
 
-
-.accordion-content {
+.accordion__img {
   width: 100%;
   display: flex;
   justify-content: center;
   max-height: 0;
   overflow: hidden;
   transition: 0.8s;
+  margin-bottom: 1vh;
 }
 
 input[type="radio"] {
   display: none;
 }
 
-input[type="radio"]:checked ~ label .accordion-content {
-  max-height: 100vh;
+input[type="radio"]:checked ~ label .accordion__img {
+  max-height: 30vh;
   transition: 0.8s;
   padding-bottom: 1vh;
 }
@@ -128,23 +128,27 @@ input[type="radio"]:checked ~ label {
   background-repeat: no-repeat;
 }
 
-.mem-1__img {
+.accordion__img {
+  display: inline-block;
+  height: 30vh;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.accordion-1__img {
   background-image: url(./assets/mem-1.jpeg);
 }
-
-.mem-2__img {
+.accordion-2__img {
   background-image: url(./assets/mem-2.jpeg);
 }
-
-.mem-3__img {
+.accordion-3__img {
   background-image: url(./assets/mem-3.jpeg);
 }
-
-.mem-4__img {
+.accordion-4__img {
   background-image: url(./assets/mem-4.jpeg);
 }
-
-.mem-5__img {
+.accordion-5__img {
   background-image: url(./assets/mem-5.jpeg);
 }
 
@@ -193,7 +197,17 @@ input[type="radio"]:checked ~ label {
   }
 }
 
+@media screen and (hover: none) {
+  .accordion__icon {
+    max-height: 2vh;
+  }
+}
+
 @media screen and (hover: hover) {
+
+  .accordion__icon {
+    max-height: 0;
+  }
 
   .mem-label:hover {
     cursor: pointer;
@@ -208,8 +222,8 @@ input[type="radio"]:checked ~ label {
     max-height: 100vh;
   }
 
-  input[type="radio"]:hover ~ label .accordion-content {
-    max-height: 100vh;
+  input[type="radio"]:hover ~ label .accordion__img {
+    max-height: 30vh;
     transition: 0.8s;
     padding-bottom: 1vh;
   }
@@ -235,7 +249,7 @@ input[type="radio"]:checked ~ label {
     transition: 0.4s;
   }
 
-  input[type="radio"]:active ~ label .accordion-content {
+  input[type="radio"]:active ~ label .accordion__img {
     opacity: 0.8;
     transition: 0.4s;
     padding-bottom: 1vh;
